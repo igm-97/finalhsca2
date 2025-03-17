@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Hola Besutys</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+            font-family: 'Quicksand', sans-serif;
+
+        }
+
+        body {
+
+            background-color: #fff5f7;
+
+            cursor: pointer;
+
+        }
+
+        .menu {
+
+            background: #ff85a2;
+
+            padding: 1rem;
+
+            position: fixed;
+
+            width: 100%;
+
+            top: 0;
+
+            z-index: 100;
+
+            display: flex;
+
+            justify-content: space-around;
+
+        }
+
+        .menu-item {
+
+            color: white;
+
+            font-size: 1.2rem;
+
+            cursor: pointer;
+
+            transition: transform 0.3s;
+
+        }
+
+        .title {
+
+            font-family: 'Pacifico', cursive;
+
+            text-align: center;
+
+            color: #ff5773;
+
+            margin-top: 80px;
+
+            font-size: 2.5rem;
+
+            padding: 0 15px;
+
+        }
+
+        .video-post {
+
+            margin: 20px 15px;
+
+            background: white;
+
+            border-radius: 15px;
+
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+            overflow: hidden;
+
+        }
+
+        .video-container {
+
+            position: relative;
+
+            padding-top: 56.25%;
+
+        }
+
+        .video-container iframe {
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            border: none;
+
+        }
+
+        .video-description {
+
+            padding: 20px;
+
+            background: #fff9fb;
+
+        }
+
+        .comentarios {
+
+            margin: 20px 15px;
+
+            padding: 20px;
+
+            background: #ffe8ec;
+
+            border-radius: 15px;
+
+        }
+
+        .comentarios h2 {
+
+            color: #ff5773;
+
+            margin-bottom: 15px;
+
+        }
+
+        .comment-form {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+
+        }
+
+        .comment-input {
+
+            padding: 12px;
+
+            border: 1px solid #ffb3c6;
+
+            border-radius: 10px;
+
+            font-size: 1rem;
+
+        }
+
+        .suscribcion {
+
+            margin: 20px 15px;
+
+            padding: 20px;
+
+            background: #ffd6e0;
+
+            border-radius: 15px;
+
+            text-align: center;
+
+        }
+
+        button {
+
+            background: #ff5773;
+
+            color: white;
+
+            border: none;
+
+            padding: 12px 30px;
+
+            border-radius: 25px;
+
+            cursor: pointer;
+
+            font-size: 1rem;
+
+            transition: transform 0.3s;
+
+        }
+
+        .beauty-tips-btn {
+
+            position: fixed;
+
+            bottom: 20px;
+
+            right: 20px;
+
+            z-index: 1000;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+        }
+
+        .comment-item {
+
+            background: white;
+
+            padding: 15px;
+
+            margin: 10px 0;
+
+            border-radius: 10px;
+
+            animation: slideIn 0.3s ease-out;
+
+        }
+
+        @keyframes slideIn {
+
+            from { transform: translateY(20px); opacity: 0; }
+
+            to { transform: translateY(0); opacity: 1; }
+
+        }
+
+        .star {
+
+            position: absolute;
+
+            animation: fall linear forwards;
+
+            color: #ff5773;
+
+            pointer-events: none;
+
+            font-size: 20px;
+
+        }
+
+        .heart {
+
+            position: absolute;
+
+            animation: float ease-out forwards;
+
+            color: #ff5773;
+
+            pointer-events: none;
+
+            font-size: 24px;
+
+        }
+
+        @keyframes fall {
+
+            0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+
+        }
+
+        @keyframes float {
+
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+
+            100% { transform: translateY(-150px) scale(0); opacity: 0; }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="menu">
+
+        <div class="menu-item"><i class="fas fa-home"></i></div>
+
+        <div class="menu-item"><i class="fas fa-video"></i></div>
+
+        <div class="menu-item"><i class="fas fa-comment"></i></div>
+
+        <div class="menu-item"><i class="fas fa-heart"></i></div>
+
+    </nav>
+
+    <button class="beauty-tips-btn" onclick="showBeautyTip()">
+
+        <i class="fas fa-spa"></i> Consejos
+
+    </button>
+
+    <h1 class="title">Hola Besutys</h1>
+
+    <div class="video-post">
+
+        <div class="video-container">
+
+            <iframe src="https://www.youtube.com/embed/ejemplo1" allowfullscreen></iframe>
+
+        </div>
+
+        <div class="video-description">
+
+            <h2>Maquillaje Express</h2>
+
+            <p>Aprende a maquillarte en 5 minutos con estos tips profesionales!</p>
+
+            <button onclick="showHearts()">Ver Tutorial</button>
+
+        </div>
+
+    </div>
+
+    <div class="comentarios">
+
+        <h2>Comentarios</h2>
+
+        <form class="comment-form" id="commentForm">
+
+            <input type="text" class="comment-input" id="userName" placeholder="Tu nombre" required>
+
+            <textarea class="comment-input" id="userComment" placeholder="Escribe tu comentario..." rows="3" required></textarea>
+
+            <button type="submit">Publicar Comentario</button>
+
+        </form>
+
+        <div id="commentsSection"></div>
+
+    </div>
+
+    <div class="suscribcion">
+
+        <h2>¡Suscríbete!</h2>
+
+        <input type="email" class="comment-input" placeholder="Ingresa tu email">
+
+        <button onclick="showHearts()">Suscribirme</button>
+
+    </div>
+
+    <script>
+
+        // Efecto estrellas
+
+        document.addEventListener('touchstart', (e) => {
+
+            createStars(e.touches[0].clientX, e.touches[0].clientY);
+
+        });
+
+        document.addEventListener('click', (e) => {
+
+            createStars(e.clientX, e.clientY);
+
+        });
+
+        function createStars(x, y) {
+
+            const starCount = 8;
+
+            const symbols = ['✦', '✧', '❉'];
+
+            
+
+            for(let i = 0; i < starCount; i++) {
+
+                const star = document.createElement('div');
+
+                star.className = 'star';
+
+                star.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+
+                star.style.left = (x + (Math.random() * 40 - 20)) + 'px';
+
+                star.style.top = (y + (Math.random() * 40 - 20)) + 'px';
+
+                star.style.animation = `fall ${0.5 + Math.random() * 1.5}s linear`;
+
+                document.body.appendChild(star);
+
+                setTimeout(() => star.remove(), 1000);
+
+            }
+
+        }
+
+        // Efecto corazones
+
+        function showHearts() {
+
+            const heartIcons = ['♥', '❤️', '💖'];
+
+            for(let i = 0; i < 5; i++) {
+
+                const heart = document.createElement('div');
+
+                heart.className = 'heart';
+
+                heart.innerHTML = heartIcons[Math.floor(Math.random() * heartIcons.length)];
+
+                heart.style.left = Math.random() * 90 + '%';
+
+                heart.style.animation = `float ${1 + Math.random() * 2}s ease-out`;
+
+                document.body.appendChild(heart);
+
+                setTimeout(() => heart.remove(), 2000);
+
+            }
+
+        }
+
+        // Sistema de comentarios corregido
+
+        document.getElementById('commentForm').addEventListener('submit', (e) => {
+
+            e.preventDefault();
+
+            
+
+            const userName = document.getElementById('userName').value;
+
+            const userComment = document.getElementById('userComment').value;
+
+            
+
+            if(userName && userComment) {
+
+                const commentDiv = document.createElement('div');
+
+                commentDiv.className = 'comment-item';
+
+                commentDiv.innerHTML = `
+
+                    <h3>${userName}</h3>
+
+                    <p>${userComment}</p>
+
+                `;
+
+                
+
+                document.getElementById('commentsSection').prepend(commentDiv);
+
+                e.target.reset();
+
+                showHearts();
+
+            }
+
+        });
+
+        // Consejos de belleza
+
+        const beautyTips = [
+
+            "Limpia tu rostro todas las noches antes de dormir",
+
+            "Usa protector solar incluso en días nublados",
+
+            "Hidrata tus labios con miel antes de aplicar labial",
+
+            "Masajea tu rostro con rodillo de jade por las mañanas",
+
+            "Usa agua termal para fijar el maquillaje"
+
+        ];
+
+        function showBeautyTip() {
+
+            const tip = beautyTips[Math.floor(Math.random() * beautyTips.length)];
+
+            alert(`💖 Consejo de belleza:\n\n${tip}`);
+
+            showHearts();
+
+        }
+
+    </script>
+
+</body>
+
+</html>
