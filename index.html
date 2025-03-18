@@ -37,6 +37,7 @@
         font-size: 24px;
         transform: rotate(-45deg) translate(-5px, -10px);
         filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
+        z-index: 100;
     }
 
         body {
@@ -58,7 +59,7 @@
 
             top: 0;
 
-            z-index: 100;
+            z-index: 99;
 
             display: flex;
 
@@ -72,9 +73,10 @@
 
             font-size: 1.2rem;
 
-            cursor: pointer;
+          
 
             transition: transform 0.3s;
+             z-index: 100;
 
         }
 
@@ -208,7 +210,7 @@
 
             border-radius: 25px;
 
-            cursor: pointer;
+       
 
             font-size: 1rem;
 
@@ -224,7 +226,7 @@
 
             right: 20px;
 
-            z-index: 1000;
+            z-index: 99;
 
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 
@@ -305,13 +307,13 @@
 
     <nav class="menu">
 
-        <div  class="menu-item"> <a href="inicio"><i class="fas fa-home"></i></a> </div>
+        <div  class="menu-item"> <a class="menu-item" href="inicio"><i class="fas fa-home"></i></a> </div>
 
-        <div class="menu-item"> <a href="video"><i class="fas fa-video"></i></a></div>
+        <div class="menu-item"> <a class="menu-item" href="video"><i class="fas fa-video"></i></a></div>
 
-        <div class="menu-item"> <a href="comentarios"><i class="fas fa-comment"></i></a></div>
+        <div class="menu-item"> <a class="menu-item" href="comentarios"><i class="fas fa-comment"></i></a></div>
 
-        <div class="menu-item"> <a href="sub"><i class="fas fa-heart"></i></a></div>
+        <div class="menu-item"> <a class="menu-item" href="sub"><i class="fas fa-heart"></i></a></div>
 
     </nav>
 
