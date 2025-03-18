@@ -27,6 +27,17 @@
             font-family: 'Quicksand', sans-serif;
 
         }
+         html {
+        cursor: none;
+    }
+    
+    .emoji-cursor {
+        position: absolute;
+        pointer-events: none;
+        font-size: 24px;
+        transform: rotate(-45deg) translate(-5px, -10px);
+        filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
+    }
 
         body {
 
@@ -291,6 +302,7 @@
 </head>
 
 <body>
+ <div class="emoji-cursor">💄</div>
 
     <nav class="menu">
 
@@ -392,9 +404,9 @@
 
                 star.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
 
-                star.style.left = (x + (Math.random() * 1920 - 1080)) + 'px';
+                star.style.left = (x + (Math.random() * 1080 - 720)) + 'px';
 
-                star.style.top = (y + (Math.random() * 1920 - 1080)) + 'px';
+                star.style.top = (y + (Math.random() * 1080 - 720)) + 'px';
 
                 star.style.animation = `fall ${0.5 + Math.random() * 5}s linear`;
 
@@ -497,7 +509,20 @@
             showHearts();
 
         }
+const cursor = document.querySelector('.emoji-cursor');
+    
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.pageX}px`;
+        cursor.style.top = `${e.pageY}px`;
+    });
 
+    // Efecto al hacer clic
+    document.addEventListener('click', () => {
+        cursor.style.transform = 'rotate(-45deg) translate(-5px, -10px) scale(0.8)';
+        setTimeout(() => {
+            cursor.style.transform = 'rotate(-45deg) translate(-5px, -10px)';
+        }, 100);
+    });
     </script>
 
 </body>
