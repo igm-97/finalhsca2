@@ -378,9 +378,9 @@
 
         function createStars(x, y) {
 
-            const starCount = 8;
+            const starCount = 50;
 
-            const symbols = ['✦', '✧', '❉'];
+            const symbols = ['✦', '✧'];
 
             
 
@@ -392,11 +392,11 @@
 
                 star.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
 
-                star.style.left = (x + (Math.random() * 40 - 20)) + 'px';
+                star.style.left = (x + (Math.random() * 400 - 20)) + 'px';
 
-                star.style.top = (y + (Math.random() * 40 - 20)) + 'px';
+                star.style.top = (y + (Math.random() * 400 - 20)) + 'px';
 
-                star.style.animation = `fall ${0.5 + Math.random() * 1.5}s linear`;
+                star.style.animation = `fall ${0.5 + Math.random() * 2.5}s linear`;
 
                 document.body.appendChild(star);
 
@@ -410,7 +410,7 @@
 
         function showHearts() {
 
-            const heartIcons = ['♥', '❤️', '💖'];
+            const heartIcons = [ '❤️', '💖'];
 
             for(let i = 0; i < 5; i++) {
 
