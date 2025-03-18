@@ -8,7 +8,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Hola Besutys</title>
+    <title>Hola Beautys</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
@@ -43,7 +43,6 @@
 
             background-color: #fff5f7;
 
-            cursor: pointer;
 
         }
 
@@ -373,7 +372,20 @@
     </div>
 
     <script>
+const cursor = document.querySelector('.emoji-cursor');
+    
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.pageX}px`;
+        cursor.style.top = `${e.pageY}px`;
+    });
 
+    // Efecto al hacer clic
+    document.addEventListener('click', () => {
+        cursor.style.transform = 'rotate(-45deg) translate(-5px, -10px) scale(0.8)';
+        setTimeout(() => {
+            cursor.style.transform = 'rotate(-45deg) translate(-5px, -10px)';
+        }, 100);
+    });
         // Efecto estrellas
 
         document.addEventListener('touchstart', (e) => {
@@ -509,20 +521,7 @@
             showHearts();
 
         }
-const cursor = document.querySelector('.emoji-cursor');
-    
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = `${e.pageX}px`;
-        cursor.style.top = `${e.pageY}px`;
-    });
 
-    // Efecto al hacer clic
-    document.addEventListener('click', () => {
-        cursor.style.transform = 'rotate(-45deg) translate(-5px, -10px) scale(0.8)';
-        setTimeout(() => {
-            cursor.style.transform = 'rotate(-45deg) translate(-5px, -10px)';
-        }, 100);
-    });
     </script>
 
 </body>
