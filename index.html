@@ -108,6 +108,24 @@ height:300px  ;
          2px  2px 0 white;
 
         }
+/* Estilo general para las imágenes */
+.foto-container {
+    display: flex;
+    justify-content: center; /* Centra las imágenes */
+}
+
+/* Aseguramos que las imágenes no se desborden y les damos espacio entre ellas */
+.foto {
+    width: 200px; /* Ancho fijo para las imágenes */
+    height: auto;
+    margin-right: 20px; /* Espacio entre imágenes */
+}
+
+/* Eliminamos el margen en la última imagen */
+.foto:last-child {
+    margin-right: 0;
+}
+
 
         .video-post {
 
@@ -375,6 +393,14 @@ height:300px  ;
         <div id="commentsSection"></div>
 
     </div>
+
+<div class="foto-container">
+        <img src="foto1.JPG" alt="Foto 1" class="foto">
+        <img src="foto2.JPG" alt="Foto 2" class="foto">
+        <img src="foto3.JPG" alt="Foto 3" class="foto">
+    </div>
+
+
 
     <div id="sub" class="suscribcion">
 
